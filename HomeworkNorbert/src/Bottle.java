@@ -35,17 +35,33 @@ public class Bottle {
     }
 
     public void bottleOpener(boolean open){
+        if(!isOpen()){
         System.out.println("The bottle is open");
         this.open=true;
+    }else{
+            System.out.println("The bottle is already opened");
+        }
     }
 
     public void bottleCloser(boolean open){
+        if(isOpen()){
         System.out.println("The bottle is closed");
         this.open=false;
+    }else{
+            System.out.println("The bottle is already closed");
+        }
     }
 
     public void drinking(int amount){
+        if(isOpen()){
         System.out.println("You ar drinking "+amount+" ml");
         setAvailable(available-amount);
+    }else if(available < amount){
+            System.out.println("You want to drink "+amount+" ml, but there is only "+available);
+        }
+
+    else{
+            System.out.println("The bottle is closed, pleas open it first ...");
+        }
     }
 }
