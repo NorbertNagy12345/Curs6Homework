@@ -3,6 +3,12 @@ public class Bottle {
     private boolean open;
     private int available;
 
+    public Bottle(int capacity, int available, boolean open) {
+        setCapacity(capacity);
+        setOpen(open);
+        setAvailable(available);
+    }
+
     public int getCapacity() {
         return capacity;
     }
@@ -27,40 +33,40 @@ public class Bottle {
         this.available = available;
     }
 
-    public boolean hasMoreLiquid(int available){
+    public boolean hasMoreLiquid(int available) {
         return available != 0;
     }
-    public int availableCapacity(int capacity,int available){
-        return capacity-available;
+
+    public int availableCapacity(int capacity, int available) {
+        return capacity - available;
     }
 
-    public void bottleOpener(boolean open){
-        if(!isOpen()){
-        System.out.println("The bottle is open");
-        this.open=true;
-    }else{
+    public void bottleOpener(boolean open) {
+        if (!isOpen()) {
+            System.out.println("The bottle is open");
+            this.open = true;
+        } else {
             System.out.println("The bottle is already opened");
         }
     }
 
-    public void bottleCloser(boolean open){
-        if(isOpen()){
-        System.out.println("The bottle is closed");
-        this.open=false;
-    }else{
+    public void bottleCloser(boolean open) {
+        if (isOpen()) {
+            System.out.println("The bottle is closed");
+            this.open = false;
+        } else {
             System.out.println("The bottle is already closed");
         }
     }
 
-    public void drinking(int amount){
-        if(isOpen()){
-        System.out.println("You ar drinking "+amount+" ml");
-        setAvailable(available-amount);
-    }else if(available < amount){
-            System.out.println("You want to drink "+amount+" ml, but there is only "+available);
-        }
-
-    else{
+    public void drinking(int amount) {
+        if (isOpen()) {
+            if (available >= amount) {
+                System.out.println("You ar drinking " + amount + " ml");
+                setAvailable(available - amount);
+                return;
+            } System.out.println("You want to drink " + amount + " ml, and there is " + available +" ml available");
+        } else {
             System.out.println("The bottle is closed, pleas open it first ...");
         }
     }

@@ -4,9 +4,21 @@ public class Main {
         persons("Marie",21,false);
         persons("Nora",24,true);
 
+        System.out.println("--------------------------------------------------------");
         products("Cola",6,12,"beverage");
         products("Toilet paper",1,200,"household");
         products("beer",3,23,"beverage");
+
+        System.out.println("--------------------------------------------------------");
+        bottleUser(700,400,true);
+    }
+
+    private static void bottleUser(int capacity, int available, boolean open) {
+        Bottle bottle = new Bottle(capacity,available,open);
+        bottle.bottleOpener(true);
+        bottle.drinking(400);
+        bottle.drinking(400);
+        bottle.drinking(300);
     }
 
     private static void products(String name, int price, int quantity, String category) {
