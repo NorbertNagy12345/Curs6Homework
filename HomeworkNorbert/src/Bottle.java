@@ -65,7 +65,8 @@ public class Bottle {
                 System.out.println("You ar drinking " + amount + " ml");
                 setAvailable(available - amount);
                 return;
-            } System.out.println("You want to drink " + amount + " ml, and there is " + available +" ml available");
+            }
+            System.out.println("You want to drink " + amount + " ml, and there is " + available + " ml available");
         } else {
             System.out.println("The bottle is closed, pleas open it first ...");
         }
