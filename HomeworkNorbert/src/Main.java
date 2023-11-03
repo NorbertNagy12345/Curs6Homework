@@ -19,6 +19,10 @@ public class Main {
         bottle.drinking(400);
         bottle.drinking(400);
         bottle.drinking(300);
+        bottle.bottleCloser(true);
+        System.out.println("Free refile ...");
+        bottle.setAvailable(bottle.getCapacity());
+        System.out.println("The bottle capacity is "+bottle.getCapacity()+" ml, and there is "+bottle.getAvailable()+" ml remaining in the bottle");
     }
 
     private static void products(String name, int price, int quantity, String category) {
